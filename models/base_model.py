@@ -19,17 +19,36 @@ class BaseModel():
                         instance is created and it will be updated every time
                         you change your object
         """
-
         self.id = str(uuid4())
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
 
     def __str__(self):
         """  print: [<class name>] (<self.id>) <self.__dict__> """
-
         class_name = self.__class__.__name__
         print("{} {} {}".format(class_name, self.id, self.__dict__))
 
+    def save(self):
+        """ updates the public instance attribute updated_at
+            with the current datetime
+        """
+        self.updated_at = datetime.utcnow()
 
-test = BaseModel(str(uuid4()), datetime.utcnow(), datetime.utcnow())
-test.__str__()
+    def to_dict(self):
+        """ returns a dictionary
+            containing all keys/values of __dict__ of the instance
+        """
+        new_dict = self.__dict__.copy()
+
+        """ a key __class__ must be added to this dictionary
+            with the class name of the object
+        """
+        new_dict[__class__] = self.__class__.__name__
+
+        """ created_at and updated_at must be converted to string object in:
+            ISO format: %Y-%m-%dT%H:%M:%S.%f (ex: 2017-06-14T22:31:03.285259)
+        """
+        new_dict['created_at'] = new_dict['created_at'].isoformat()
+        new_dict['updated_at'] = new_dict['updated_at'].isoformat()
+
+        return new_dict
