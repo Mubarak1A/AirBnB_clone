@@ -1,6 +1,7 @@
-#!/bin/python3
+#!/usr/bin/python3
 """ Module to test BaseModel class attributes and functions """
 import unittest
+from os import path
 from datetime import datetime
 from models.base_model import BaseModel
 
