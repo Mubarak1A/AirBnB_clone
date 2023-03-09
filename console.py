@@ -85,8 +85,26 @@ class HBNBCommand(cmd.Cmd):
             else:
                 del models.storage.all()[arg]
                 models.storage.save()
-                
-        def do_all(self, arg)
+
+        def do_all(self, arg):
+            """ Prints all string representation of all instances
+                based or not on the class name
+
+                arg - (string) instance class name
+            """
+            objs = models.storage.all()
+            objs_list = []
+            for key, value in objs.items():
+                objs_list.append(str(objs.value))
+            if arg:
+                if arg not in HBNBCommand.class_dic.keys():
+                    print("** class doesn't exist **")
+                else:
+                    if len(obj_list) > 0:
+                        print(obj_list)
+            else:
+                if len(obj_list) > 0:
+                    print(obj_list)
 
 
 if __name__ == '__main__':
