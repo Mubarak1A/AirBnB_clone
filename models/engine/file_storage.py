@@ -7,6 +7,7 @@ from models.user import User
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
+from models.place import Place
 
 
 class FileStorage:
@@ -20,7 +21,8 @@ class FileStorage:
                  'User': User,
                  'State': State,
                  'City': City,
-                 'Amenity': Amenity
+                 'Amenity': Amenity,
+                 'Place': Place
                  }
 
     def all(self):
