@@ -3,6 +3,7 @@
 import os
 import json
 from base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -12,6 +13,8 @@ class FileStorage:
 
     __file_path = "file.json"  # file path name
     __object = {}  # to store all instances
+    className = {'BaseModel': BaseModel,
+                 'User': User}
 
     def all(self):
         """ returns the dictionary __object """
@@ -36,4 +39,7 @@ class FileStorage:
         """ deserializes the JSON file to __objects """
         if os.path.exists(FileStorage.__file_path):
             with open("FileStorage.__file_path", "r") as f:
-                obj_dict = json.load(f)
+                dict_obj_dicts = json.load(f)
+            for key, value in obj_dict.items():
+                obj_classname = value["__class__"]
+                FileStorage.__object[key] = className[obj_classname](**value)
