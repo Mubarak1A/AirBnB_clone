@@ -15,7 +15,8 @@ class FileStorage:
     __object = {}  # to store all instances
     className = {'BaseModel': BaseModel,
                  'User': User,
-                 'State': State}
+                 'State': State,
+                 'City': City}
 
     def all(self):
         """ returns the dictionary __object """
