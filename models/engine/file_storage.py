@@ -4,6 +4,9 @@ import os
 import json
 from base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
 
 
 class FileStorage:
@@ -16,7 +19,9 @@ class FileStorage:
     className = {'BaseModel': BaseModel,
                  'User': User,
                  'State': State,
-                 'City': City}
+                 'City': City,
+                 'Amenity': Amenity
+                 }
 
     def all(self):
         """ returns the dictionary __object """
