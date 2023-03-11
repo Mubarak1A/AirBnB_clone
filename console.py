@@ -69,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
 
         def do_destroy(self, arg):
             """ Deletes an instance based on the class name and id
-                save the change into the JSON file
+                save the changes into the JSON file
 
                 arg - (string) instance class name and id
             """
