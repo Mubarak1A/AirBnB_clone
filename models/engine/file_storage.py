@@ -14,7 +14,8 @@ class FileStorage:
     __file_path = "file.json"  # file path name
     __object = {}  # to store all instances
     className = {'BaseModel': BaseModel,
-                 'User': User}
+                 'User': User,
+                 'State': State}
 
     def all(self):
         """ returns the dictionary __object """
