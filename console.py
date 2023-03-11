@@ -2,13 +2,13 @@
 """ Module  contains the entry point of the command interpreter """
 import cmd
 import models
-from models.base_model import BaseModel
+# from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
     """ class that handles command """
 
-    prompt = '(hbnb) '
+    prompt = '(hbnb)'
     class_dic = {"BaseModel": models.BaseModel,
                  "User": models.User,
                  "State": models.State,
@@ -128,27 +128,26 @@ class HBNBCommand(cmd.Cmd):
                 elif len(args) == 3:
                     print("** value missing **")
                 else:
-                    obj = models.storage._FileStorage__objects[args[0]+'.'+args[1]]
-            if args[2] in obj.__dict__.keys():
-                try:
-                    if args[3].isdigit():
-                        args[3] = int(args[3])
-                    elif args[3].replace('.', '', 1).isdigit():
-                        args[3] = float(args[3])
-                except AttributeError:
-                    pass
-                setattr(obj, args[2], args[3])
-            else:
-                try:
-                    if args[3].isdigit():
-                        args[3] = int(args[3])
-                    elif args[3].replace('.', '', 1).isdigit():
-                        args[3] = float(args[3])
-                except AttributeError:
-                    pass
-                setattr(obj, args[2], args[3])
-            HBNBCommand.className[args[0]].save(obj)
-
+                    obj = objs[args[0]+'.'+args[1]]
+                    if args[2] in obj.__dict__.keys():
+                        try:
+                            if args[3].isdigit():
+                                args[3] = int(args[3])
+                            elif args[3].replace('.', '', 1).isdigit():
+                                args[3] = float(args[3])
+                        except AttributeError:
+                            pass
+                        setattr(obj, args[2], args[3])
+                    else:
+                        try:
+                            if args[3].isdigit():
+                                args[3] = int(args[3])
+                            elif args[3].replace('.', '', 1).isdigit():
+                                args[3] = float(args[3])
+                        except AttributeError:
+                            pass
+                        setattr(obj, args[2], args[3])
+                    HBNBCommand.className[args[0]].save(obj)
 
 
 if __name__ == '__main__':
