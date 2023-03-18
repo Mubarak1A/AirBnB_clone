@@ -56,9 +56,5 @@ But also in non-interactive mode: (like the Shell project in C)
 
 # Secound Step: Web_Static
 Building the frontend.
+
 More the details in the # web_static Directory README file
-    Documented commands (type help <topic>):
-    ========================================
-    EOF  help  quit
-    (hbnb) 
-    $
