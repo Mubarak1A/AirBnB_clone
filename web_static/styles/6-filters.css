@@ -64,9 +64,45 @@ h4{
     top: 70px;
     width: 79%;
     margin: 0;
-    padding: 20px 0 20px 40px;
+    padding: 20px 0 20px 20px;
     background-color: #fafafa;
     border: solid 1px #dddddd;
     list-style: none;
 }
 
+.locations .popover{
+    width: 90%;
+}
+
+.popover ul li{
+    list-style: none;
+    margin-top: 5px;
+}
+
+.locations .popover li ul li{
+    margin: 0 0 5px 0;
+}
+
+.locations .popover li{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.popover li h2{
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.popover li{
+    list-style: none;
+    margin-top: 10px;
+}
+
+.filter .locations .popover, .filter .amenities .popover{
+    visibility: hidden;
+}
+
+.filter .locations:hover .popover, .filter .amenities:hover .popover{
+    visibility: visible;
+}
