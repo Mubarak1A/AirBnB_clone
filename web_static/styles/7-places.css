@@ -12,14 +12,16 @@
 article{
     position: relative;
     text-align: center;
+    display: inline-block;
+    width: 390px;
+    margin: 20px;
+    padding: 20px;
+    margin-top: 0;
+    border: solid 1px #ff5a5f;
 }
 
 article h2{
-    display: inline-block;
-    width: 390px;
-    border: solid 1px #ff5a5f;
-    padding: 20px;
-    margin: 20px;
-    margin-top: 0;
     font-size: 30px;
+    margin: 0;
+    padding: 0;
 }
