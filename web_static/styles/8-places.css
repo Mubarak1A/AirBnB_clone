@@ -11,9 +11,11 @@
 
 article{
     position: relative;
+    top: 20px;
     text-align: center;
     display: inline-block;
     width: 390px;
+    height: 350px;
     margin: 20px;
     padding: 20px;
     margin-top: 0;
@@ -23,5 +25,58 @@ article{
 article h2{
     font-size: 30px;
     margin: 0;
+    padding: 0;
+}
+
+.price_by_night{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 20px;
+    min-width: 60px;
+    height: 60px;
+    color: #ff5a5f;
+    border: solid 4px #ff5a5f;
+    border-radius: 50%;
+    line-height: 60px;
+}
+
+.information{
+    position: relative;
+    top: 40px;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+}
+
+.max_guest, .number_rooms, .number_bathroom{
+    display: inline-block;
+    width: 100px;
+    line-height: 80px;
+    border: solid 1px red;
+}
+
+.icon{
+    position: absolute;
+    background-image: url(../images/icon.png);
+}
+
+.icon_bed{
+    position: absolute;
+    background-image: url(../images/icon_bed.png);
+}
+
+.icon_bath{
+    position: absolute;
+    background-image: url(../images/icon_bath.png);
+}
+
+.user{
+    border: solid 1px red;
+    position: relative;
+    top: 40px;
+    text-align: left;
     padding: 0;
 }
