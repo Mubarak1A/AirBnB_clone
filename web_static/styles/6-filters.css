@@ -68,6 +68,7 @@ h4{
     background-color: #fafafa;
     border: solid 1px #dddddd;
     list-style: none;
+    z-index: 999;
 }
 
 .locations .popover{
