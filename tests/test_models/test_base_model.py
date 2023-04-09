@@ -3,7 +3,8 @@
 import unittest
 from os import path
 from datetime import datetime
-from models.base_model import BaseModel
+from AirBnB_clone.tests import BaseModel
+
 
 
 class test_BaseModel(unittest.TestCase):
